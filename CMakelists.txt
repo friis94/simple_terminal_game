@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.27)
+project(terminal_game)
+
+
+include_directories(src)
+include_directories(yahdlc/C)
+
+
+set(SOURCE
+   src/game_business.c
+   src/hdlc_process.c
+   src/uart.c
+   src/main.c
+
+   yahdlc/C/yahdlc.c
+   yahdlc/C/fcs.c
+)
+
+
+add_executable(${PROJECT_NAME} ${SOURCE})
